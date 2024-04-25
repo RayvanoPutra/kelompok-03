@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/login.css">
+    <title>Presensi Asisten</title>
+    <link rel="stylesheet" href="/css/login.css">
 
     {{-- google fonts start--}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,15 +19,18 @@
 </head>
 <body>
     <div class="wrapper">
-        <form action="">
-            <h1>Login</h1>
+    <h1>Login</h1>
+        <form action="/login" method="post">
+            @csrf
             <div class="input-box">
-                <input type="text" placeholder="Username" required>
+                <input type="text" name="username" @error ('username') is-invalid @enderror id="username" placeholder="Username" autofocus required value="{{old('username')}}">
                 <i class='bx bxs-user'></i>
+                <label for="username">Username</label>
             </div>
             <div class="input-box">
                 <input type="Password" placeholder="Password" required>
                 <i class='bx bxs-lock-alt'></i>
+                <label for="password">Password</label>
             </div>
             <button type="submit" class="btn">Login</button>
 
