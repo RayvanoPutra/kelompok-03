@@ -12,7 +12,8 @@ class LoginController extends Controller
     public function index()
     {
         return view('login.login', [
-            'title' => 'login'
+            'title' => 'login',
+            'active' => 'login'
         ]);
     }
 
@@ -20,8 +21,8 @@ class LoginController extends Controller
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
-            "username" => "required",
-            "password" => "required",
+            'nim' => 'required',
+            'password' => 'required',
         ]);
 
         if (Auth::attempt($credentials)) {
@@ -31,5 +32,6 @@ class LoginController extends Controller
         }
 
         return back()->with('loginError', 'Login Failed!');
+
     }
 }
