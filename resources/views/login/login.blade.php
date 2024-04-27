@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/login.css">
+    <title>Presensi Asisten</title>
+    <link rel="stylesheet" href="/css/login.css">
 
     {{-- google fonts start--}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,21 +19,24 @@
 </head>
 <body>
     <div class="wrapper">
-        <form action="">
-            <h1>Login</h1>
+    <h1>Login</h1>
+        <form action="/login" method="post">
+            @csrf
             <div class="input-box">
-                <input type="text" placeholder="Username" required>
+                <input type="text" name="nim" @error ('username') is-invalid @enderror id="nim" placeholder="NIM" autofocus required value="{{old('nim')}}">
                 <i class='bx bxs-user'></i>
+                <label for="nim">Username</label>
             </div>
             <div class="input-box">
-                <input type="Password" placeholder="Password" required>
+                <input type="password" placeholder="password" required>
                 <i class='bx bxs-lock-alt'></i>
+                <label for="password">Password</label>
             </div>
             <button type="submit" class="btn">Login</button>
 
             <div class="register-link">
                 <p>
-                    Belum punya akun? <a href="registrasi">Register</a>
+                    Belum punya akun? <a href="/register">Daftar</a>
                 </p>
             </div>
         </form>
