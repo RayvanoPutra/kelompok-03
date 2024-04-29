@@ -10,15 +10,15 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(/img/work-1.jpg)no-repeat;
+    background: url(/img/work2.jpg)no-repeat;
     background-size: cover;
     background-position: center;
-    
 }
 
 .wrapper {
-    width: 420px;
-    background: transparent;border: 2px solid rgba(255, 255, 255, .2);
+    height: 350px;
+    width: 450px;
+    background:  rgba(0, 0, 0, 0.5)   ;
     backdrop-filter: blur(3px);
     color: #fff;
     padding: 25px 40px;
@@ -93,15 +93,41 @@ padding: 20px 25px 20px 20px;
     margin: 20px 0 15px;
 }
 
-.btn a {
+.google-icon i  {
+    position: relative;
+    margin-top: 40px;
+    left: 132px;
+    border-radius: 50px;
+    border: 2px solid;
+}
+
+.google-icon a {
     color: #fff;
+    font-size: 30px;
+}
+
+.wrapper .btn-2 {
+    position: relative;
+    left: 125px;
+    top: 25px;
+    width: 30%;
+    height: 45px;
+    border: none;
+    border-radius: 30px;
+    background-color: rgb(255, 255, 255);
+    font-weight: 700;
+    
+}
+
+.wrapper .btn-2:hover {
+    background-color: rgb(12, 180, 180);
+    transition: 0.6s;
+}
+
+.wrapper .btn-2 a {
+    font-family: 'poppins', sans-serif  ;
+    color: #000000;
     text-decoration: none;
+    left: 20px;
 }
 
-.bx {
-    color: #fff;
-}
-
-.table-1 {
-    background: #fff;
-}
